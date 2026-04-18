@@ -160,3 +160,56 @@ async function clearChat() {
 
 // Ensure it is exposed to the HTML
 window.clearChat = clearChat;
+
+// ===================== 📝 NOTES LOGIC =====================
+
+async function addNote() {
+    const text = prompt("Enter your note:");
+    if (!text) return;
+
+    try {
+        await addDoc(collection(db, "notes"), {
+            content: text,
+            time: Date.now(),
+            author: localStorage.getItem("chatName") || "User"
+        });
+    } catch (err) {
+        console.error("Error adding note:", err);
+    }
+}
+
+function loadNotes() {
+    const notesList = document.getElementById("notesList");
+    const previewList = document.getElementById("notesPreviewList");
+    if (!notesList && !previewList) return;
+
+    const q = query(collection(db, "notes"), orderBy("time", "desc"));
+
+    onSnapshot(q, (snapshot) => {
+        let html = "";
+        snapshot.forEach((docSnap) => {
+            const data = docSnap.data();
+            html += `
+                <div class="note-item">
+                    ${data.content}
+                    <br><small style="font-size:0.7em; color:gray;">By ${data.author}</small>
+                </div>`;
+        });
+
+        if (notesList) notesList.innerHTML = html;
+        if (previewList) previewList.innerHTML = html || "No notes yet...";
+    });
+}
+
+// Update the window exposure section
+window.addNote = addNote;
+
+// Update window.onload to include loadNotes
+window.onload = () => {
+    loadMessages();
+    loadNotes(); // Added this
+    const nameEl = document.getElementById("chatName") || document.getElementById("homeName");
+    if (nameEl) {
+        nameEl.innerText = localStorage.getItem("chatName") || "My Person 💜";
+    }
+};
