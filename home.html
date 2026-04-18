@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>UsSpace 💜</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- 🔝 HEADER -->
+<div class="home-header">💬 UsSpace</div>
+
+<!-- 💜 WELCOME -->
+<div class="welcome">
+    <h3 id="homeName">My Person 💜</h3>
+    <p>Always with you 💫</p>
+</div>
+
+<!-- 💬 CHAT ENTRY -->
+<div class="chat-item" onclick="openChat()">
+    💜 Open Chat
+    <p id="lastMsg">No messages yet...</p>
+</div>
+
+<!-- ❤️ HEART BUTTON -->
+<div class="heart-container">
+    <button class="heart-circle" onclick="quickMissYou()">❤️</button>
+</div>
+
+<!-- 📝 NOTES SECTION -->
+<div class="notes-preview">
+    <div class="notes-header">
+        📝 Notes
+        <span onclick="openNotes()">See All</span>
+    </div>
+
+    <div id="notesPreviewList"></div>
+
+    <button class="add-note-btn" onclick="addNote()">➕ Add Note</button>
+</div>
+
+<script type="module" src="script.js"></script>
+</body>
+</html>

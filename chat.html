@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>UsSpace Chat 💜</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- 🔝 HEADER -->
+<div class="header">
+
+    <div class="left">
+        <span class="back" onclick="goHome()">⬅</span>
+    </div>
+
+    <div class="center">
+        <img id="profilePic" class="dp" src="https://via.placeholder.com/40">
+        <span id="chatName">My Person 💜</span>
+    </div>
+
+    <div class="right">
+        <button onclick="clearChat()">🗑️</button>
+        <button onclick="changeName()">✏️</button>
+        <button onclick="document.getElementById('bgInput').click()">🎨</button>
+        <button onclick="document.getElementById('dpInput').click()">👤</button>
+    </div>
+
+</div>
+
+<!-- 📂 Hidden Inputs -->
+<input type="file" id="bgInput" hidden accept="image/*" onchange="setBackground(event)">
+<input type="file" id="dpInput" hidden accept="image/*" onchange="setProfile(event)">
+
+<!-- 💬 CHAT BOX -->
+<div id="chatBox" class="chat-box"></div>
+
+<!-- ✍️ INPUT AREA -->
+<div class="input-area">
+
+    <input 
+        type="text" 
+        id="message" 
+        placeholder="Type a message..."
+        autocomplete="off"
+    >
+
+    <button onclick="sendMessage()">➤</button>
+
+</div>
+
+<!-- ❤️ QUICK ACTION BUTTON -->
+<button class="heart-btn" onclick="missYou()">
+    ❤️ Missing You
+</button>
+
+<!-- 📜 SCRIPT -->
+<script type="module" src="script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>UsSpace Login 💜</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(to right,#ff9a9e,#fad0c4);
+        }
+
+        .box {
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            width: 80%;
+            max-width: 300px;
+            text-align: center;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            margin-top: 10px;
+            border-radius: 10px;
+            border: none;
+            background: #f2f2f2;
+        }
+
+        button {
+            width: 100%;
+            margin-top: 15px;
+            padding: 12px;
+            background: #ff4d6d;
+            color: white;
+            border: none;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="box">
+    <h2>🔒 UsSpace</h2>
+    <input type="password" id="pin" placeholder="Enter PIN">
+    <button onclick="login()">Unlock</button>
+</div>
+
+<script>
+function login(){
+    if(document.getElementById("pin").value === "1436"){
+        window.location.href="home.html";
+    } else alert("Wrong PIN ❌");
+}
+</script>
+
+</body>
+</html>

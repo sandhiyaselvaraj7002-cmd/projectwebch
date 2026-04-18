@@ -1,0 +1,232 @@
+html, body {
+    margin: 0;
+    height: 100%;
+    font-family: Arial;
+}
+
+/* Home */
+.home-header {
+    background: #ff4d6d;
+    color: white;
+    padding: 15px;
+    font-size: 18px;
+}
+
+.chat-item {
+    padding: 15px;
+    background: white;
+    margin: 10px;
+    border-radius: 10px;
+}
+
+/* Header */
+.header {
+    background: #ff4d6d;
+    color: white;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+/* Profile */
+.dp {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+}
+
+/* Chat */
+.chat-box {
+    height: 55vh;
+    overflow-y: auto;
+    padding: 10px;
+    background: #fff0f5;
+}
+
+/* Messages */
+.message {
+    padding: 10px;
+    margin: 5px;
+    border-radius: 10px;
+    max-width: 70%;
+}
+
+.my-msg {
+    background: #ff4d6d;
+    color: white;
+    margin-left: auto;
+}
+
+.other-msg {
+    background: white;
+}
+
+/* Input */
+.input-area {
+    display: flex;
+    padding: 10px;
+}
+
+.input-area input {
+    flex: 1;
+    padding: 10px;
+    border-radius: 20px;
+    border: none;
+    background: #f2f2f2;
+}
+
+/* Buttons */
+.input-area button {
+    margin-left: 5px;
+    border-radius: 50%;
+    background: #ff4d6d;
+    color: white;
+    border: none;
+}
+
+.heart-btn, .notes-btn {
+    width: 100%;
+    padding: 10px;
+    border: none;
+}
+
+.notes-box {
+    padding: 10px;
+}
+
+.add-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 15px;
+    border-radius: 50%;
+    background: #ff4d6d;
+    color: white;
+    border: none;
+}
+/* Welcome section */
+.welcome {
+    padding: 15px;
+    text-align: center;
+}
+
+.welcome h3 {
+    margin: 5px 0;
+}
+
+#welcome p {
+    color: gray;
+}
+
+/* Chat preview */
+#lastMsg {
+    font-size: 12px;
+    color: gray;
+}
+
+/* Quick buttons */
+.quick-actions {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.quick-actions button {
+    padding: 12px;
+    border-radius: 10px;
+    border: none;
+    background: #ff4d6d;
+    color: white;
+}
+.heart-btn {
+    margin-bottom: 10px;
+}
+/* Welcome */
+.welcome {
+    text-align: center;
+    margin-top: 10px;
+}
+
+/* Chat item */
+.chat-item {
+    background: white;
+    margin: 15px;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+/* ❤️ Heart button container */
+.heart-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+/* ❤️ Round button */
+.heart-circle {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: #ff4d6d;
+    color: white;
+    font-size: 30px;
+    border: none;
+
+    /* 💓 Heartbeat animation */
+    animation: heartbeat 1s infinite;
+}
+
+/* 💓 Animation */
+@keyframes heartbeat {
+    0% { transform: scale(1); }
+    25% { transform: scale(1.2); }
+    50% { transform: scale(1); }
+    75% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+
+/* 📝 Notes preview */
+.notes-preview {
+    margin: 15px;
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+.notes-header {
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+}
+
+.notes-header span {
+    color: #ff4d6d;
+    cursor: pointer;
+}
+
+/* Notes list */
+#notesPreviewList {
+    margin-top: 10px;
+    font-size: 14px;
+    color: gray;
+}
+
+/* Add note button */
+.add-note-btn {
+    width: 100%;
+    margin-top: 10px;
+    padding: 10px;
+    background: #ff4d6d;
+    color: white;
+    border: none;
+    border-radius: 10px;
+}
+.note-item {
+    background: #fff;
+    padding: 10px;
+    margin-bottom: 8px;
+    border-left: 5px solid #ff4d6d;
+    border-radius: 5px;
+    font-size: 14px;
+}
