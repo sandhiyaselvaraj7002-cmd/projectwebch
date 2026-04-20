@@ -213,3 +213,65 @@ window.onload = () => {
         nameEl.innerText = localStorage.getItem("chatName") || "My Person 💜";
     }
 };
+
+// ===================== 🎨 BACKGROUND & PROFILE UI =====================
+
+// Function to handle Background change
+window.setBackground = (event) => {
+    const file = event.target.files[0];
+    if (file) {
+        const reader = new FileReader();
+        reader.onload = (e) => {
+            const imageUrl = e.target.result;
+            // Apply to chatBox
+            const chatBox = document.getElementById("chatBox");
+            if (chatBox) chatBox.style.backgroundImage = `url(${imageUrl})`;
+            chatBox.style.backgroundSize = "cover";
+            chatBox.style.backgroundPosition = "center";
+            
+            // Save to memory
+            localStorage.setItem("chatBG", imageUrl);
+        };
+        reader.readAsDataURL(file);
+    }
+};
+
+// Function to handle Profile Picture change
+window.setProfile = (event) => {
+    const file = event.target.files[0];
+    if (file) {
+        const reader = new FileReader();
+        reader.onload = (e) => {
+            const imageUrl = e.target.result;
+            // Apply to DP image
+            const dp = document.getElementById("profilePic");
+            if (dp) dp.src = imageUrl;
+            
+            // Save to memory
+            localStorage.setItem("chatDP", imageUrl);
+        };
+        reader.readAsDataURL(file);
+    }
+};
+
+// Update the existing window.onload to reload these images
+const originalOnload = window.onload;
+window.onload = () => {
+    if (originalOnload) originalOnload();
+
+    // Load saved Background
+    const savedBG = localStorage.getItem("chatBG");
+    const chatBox = document.getElementById("chatBox");
+    if (savedBG && chatBox) {
+        chatBox.style.backgroundImage = `url(${savedBG})`;
+        chatBox.style.backgroundSize = "cover";
+        chatBox.style.backgroundPosition = "center";
+    }
+
+    // Load saved Profile Picture
+    const savedDP = localStorage.getItem("chatDP");
+    const dp = document.getElementById("profilePic");
+    if (savedDP && dp) {
+        dp.src = savedDP;
+    }
+};
