@@ -4,6 +4,22 @@
     <title>Notes 💜</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <title>Background UI</title>
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#ff4d6d">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="apple-touch-icon" href="icon-192.png">
+
+<script>
+  if ("serviceWorker" in navigator) {
+    window.addEventListener("load", () => {
+      navigator.serviceWorker.register("sw.js")
+        .then(reg => console.log("Background UI Registered!"))
+        .catch(err => console.log("PWA Setup Failed", err));
+    });
+  }
+</script>
 </head>
 
 <body>
