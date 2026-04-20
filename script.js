@@ -272,3 +272,29 @@ window.onload = () => {
         dp.src = savedDP;
     }
 };
+// Add this inside your existing window.onload function in script.js
+window.onload = () => {
+    loadMessages();
+    loadNotes();
+
+    // Load saved Background
+    const savedBG = localStorage.getItem("chatBG");
+    const chatBox = document.getElementById("chatBox");
+    if (savedBG && chatBox) {
+        chatBox.style.backgroundImage = `url('${savedBG}')`;
+        chatBox.style.backgroundSize = "cover";
+        chatBox.style.backgroundPosition = "center";
+    }
+
+    // Load saved Profile Picture
+    const savedDP = localStorage.getItem("chatDP");
+    const dp = document.getElementById("profilePic");
+    if (savedDP && dp) {
+        dp.src = savedDP;
+    }
+
+    const nameEl = document.getElementById("chatName") || document.getElementById("homeName");
+    if (nameEl) {
+        nameEl.innerText = localStorage.getItem("chatName") || "My Person 💜";
+    }
+};
