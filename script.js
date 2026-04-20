@@ -223,13 +223,13 @@ window.setBackground = (event) => {
         const reader = new FileReader();
         reader.onload = (e) => {
             const imageUrl = e.target.result;
-            // Apply to chatBox
             const chatBox = document.getElementById("chatBox");
-            if (chatBox) chatBox.style.backgroundImage = `url(${imageUrl})`;
-            chatBox.style.backgroundSize = "cover";
-            chatBox.style.backgroundPosition = "center";
-            
-            // Save to memory
+            if (chatBox) {
+                // Applying directly to style for immediate mobile feedback
+                chatBox.style.backgroundImage = `url('${imageUrl}')`;
+                chatBox.style.backgroundSize = "cover";
+                chatBox.style.backgroundPosition = "center";
+            }
             localStorage.setItem("chatBG", imageUrl);
         };
         reader.readAsDataURL(file);
@@ -243,11 +243,8 @@ window.setProfile = (event) => {
         const reader = new FileReader();
         reader.onload = (e) => {
             const imageUrl = e.target.result;
-            // Apply to DP image
             const dp = document.getElementById("profilePic");
             if (dp) dp.src = imageUrl;
-            
-            // Save to memory
             localStorage.setItem("chatDP", imageUrl);
         };
         reader.readAsDataURL(file);
