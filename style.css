@@ -230,3 +230,11 @@ html, body {
     border-radius: 5px;
     font-size: 14px;
 }
+
+/* Ensure the chat box handles background images well */
+.chat-box {
+    background-color: #fff0f5; /* Fallback color */
+    background-blend-mode: overlay; /* Helps messages pop against the image */
+    background-repeat: no-repeat;
+    background-attachment: local;
+}
